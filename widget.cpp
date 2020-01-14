@@ -4,13 +4,65 @@
 #include "Item.h"
 #include <QDebug>
 #include <QSpacerItem>
+#include <iostream>
+#include <memory>
+
+using namespace std;
+
+class B;    //声明
+class A
+{
+public:
+    shared_ptr<B> pb_;
+    A()
+    {
+        cout << "A contruct\n";
+    }
+
+    ~A()
+    {
+        cout << "A delete\n";
+    }
+};
+
+class B
+{
+public:
+    shared_ptr<A> pa_;
+    B()
+    {
+        cout << "B contruct\n";
+    }
+
+    ~B()
+    {
+        cout << "B delete\n";
+    }
+};
+
+void fun()
+{
+    shared_ptr<B> pb(new B());
+    shared_ptr<A> pa(new A());
+    cout << pb.use_count() << endl; //1
+    cout << pa.use_count() << endl; //1
+    pb->pa_ = pa;
+    pa->pb_ = pb;
+    cout << pb.use_count() << endl; //2
+    cout << pa.use_count() << endl; //2
+}
 
 Widget::Widget(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::Widget)
 {
     ui->setupUi(this);
-    initUi();
+//    initUi();
+
+//    char buffer[256] = "p123oo 34";
+//    int i = atoi (buffer);
+//    qDebug() << "testAtoi==" << i;
+    fun();
 }
 
 Widget::~Widget()
