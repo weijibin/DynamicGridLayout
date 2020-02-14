@@ -1,1 +1,12 @@
-<RCC/>
+<RCC>
+    <qresource prefix="/">
+        <file>res/senior_con_bg.png</file>
+        <file>res/senior_praise_pressed.png</file>
+        <file>res/item/boyLeft.png</file>
+        <file>res/item/other_horn.png</file>
+        <file>res/item/other_horn_reading.png</file>
+        <file>res/item/self_horn.png</file>
+        <file>res/item/self_horn_reading.png</file>
+        <file>res/item/star.png</file>
+    </qresource>
+</RCC>

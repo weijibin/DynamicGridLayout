@@ -17,7 +17,7 @@ Item::Item(QWidget *parent) :
     str = "QWidget#itemObj{background-color:#fff000;}\
            QWidget#itemObj[status=\"1\"]{background-color:#ff0000;}\
            QWidget#itemObj[status=\"2\"]{background-color:#00ff00;}";
-    this->setStyleSheet(str);
+//    this->setStyleSheet(str);
 }
 
 Item::~Item()

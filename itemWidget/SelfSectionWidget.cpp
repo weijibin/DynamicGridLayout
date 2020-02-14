@@ -3,14 +3,13 @@
 #include <QPainter>
 #include <QStyleOption>
 #include <QDebug>
-#include "defines.h"
 #include <QTimer>
 #include <QPoint>
 #include <QMouseEvent>
 
-#define HORN_PIX_NORMAL            PPRE("skin/General/interact_native/roleplay/self_horn.png")
-#define HORN_PIX_READING           PPRE("skin/General/interact_native/roleplay/self_horn_reading.png")
-#define HORN_PIX_READINGANI_DIR    PPRE("skin/General/interact_native/roleplay/senior/rightAni")
+#define HORN_PIX_NORMAL            (":/res/item/self_horn.png")
+#define HORN_PIX_READING           (":/res/item/self_horn_reading.png")
+#define HORN_PIX_READINGANI_DIR    (":/res/item/rightAni")
 
 static const int textMaxWidth = 480;
 

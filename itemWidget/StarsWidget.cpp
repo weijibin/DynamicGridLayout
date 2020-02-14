@@ -2,9 +2,8 @@
 #include <QDebug>
 #include <QLabel>
 #include <QPainter>
-#include "defines.h"
 
-#define STAR_PIX    PPRE("skin/General/interact_native/roleplay/star.png")
+#define STAR_PIX    (":/res/item/star.png")
 
 StarsWidget::StarsWidget(QWidget *parent) : QWidget(parent)
 {

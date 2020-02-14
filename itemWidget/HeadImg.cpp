@@ -3,17 +3,15 @@
 #include <QPainterPath>
 #include <QFont>
 #include <QFontMetrics>
-#include <QNetworkAccessManager>
-#include <QNetworkReply>
 #include <QDir>
 #include <QFileInfo>
 #include <QStandardPaths>
 #include <QRect>
-#include "defines.h"
+#include <QDebug>
 
 HeadImg::HeadImg(QWidget*parent) : QWidget(parent)
 {
-    m_pix.load(PPRE("skin/General/interact_native/roleplay/boyLeft.png"));
+    m_pix.load(":/res/item/boyLeft.png");
     m_catchDir = QStandardPaths::writableLocation(QStandardPaths::TempLocation) + "/xes_imgCache/";
 
     QDir d(m_catchDir);
@@ -39,46 +37,30 @@ HeadImg::HeadImg(QWidget*parent) : QWidget(parent)
 
 void HeadImg::setImgUrl(QString img_url)
 {
-    qDebug()<< Q_FUNC_INFO << img_url;
-    if(img_url.isEmpty())
-        return;
-    m_imgName = img_url.mid(img_url.lastIndexOf("/") + 1);
-
-    QFileInfo file(m_catchDir + m_imgName);
-    bool isExist = file.exists();
-
-    qDebug()<< Q_FUNC_INFO <<m_catchDir<<m_imgName << isExist;
-    if(isExist) {
-        m_pix.load(m_catchDir+m_imgName);
-        qDebug() << m_pix.size();
-        update();
-    } else {
-        setRemoteImg(img_url);
-    }
 }
 
 void HeadImg::setRemoteImg(const QString &img_url)
 {
-    qDebug() << Q_FUNC_INFO;
-    QNetworkAccessManager *manager = new QNetworkAccessManager(this);
-    QNetworkReply *reply = manager->get(QNetworkRequest(img_url));
-    connect(reply, &QNetworkReply::finished, [this, reply, manager](){
-        manager->deleteLater();
-        if (nullptr == reply) {
-            return;
-        }
-        qDebug() << Q_FUNC_INFO;
-        qDebug()<<reply->error();
-        if (reply->error() == QNetworkReply::NoError) {
-            QByteArray bytes = reply->readAll();
-            m_pix.loadFromData(bytes);
-            qDebug() << m_catchDir+m_imgName;
-            bool is = m_pix.save(m_catchDir+m_imgName);
-            qDebug() << is;
-            update();
-        }
-        reply->deleteLater();
-    });
+//    qDebug() << Q_FUNC_INFO;
+//    QNetworkAccessManager *manager = new QNetworkAccessManager(this);
+//    QNetworkReply *reply = manager->get(QNetworkRequest(img_url));
+//    connect(reply, &QNetworkReply::finished, [this, reply, manager](){
+//        manager->deleteLater();
+//        if (nullptr == reply) {
+//            return;
+//        }
+//        qDebug() << Q_FUNC_INFO;
+//        qDebug()<<reply->error();
+//        if (reply->error() == QNetworkReply::NoError) {
+//            QByteArray bytes = reply->readAll();
+//            m_pix.loadFromData(bytes);
+//            qDebug() << m_catchDir+m_imgName;
+//            bool is = m_pix.save(m_catchDir+m_imgName);
+//            qDebug() << is;
+//            update();
+//        }
+//        reply->deleteLater();
+//    });
 }
 
 

@@ -2,10 +2,13 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include <QEventLoop>
 
 namespace Ui {
 class Widget;
 }
+
+class Dialog;
 
 class Widget : public QWidget
 {
@@ -17,8 +20,18 @@ public:
 
     void initUi();
 
+protected:
+    virtual void paintEvent(QPaintEvent *event) override;
+
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::Widget *ui;
+    QEventLoop *m_loop=nullptr;
+
+    Dialog * m_dlg1 = nullptr;
+    Dialog * m_dlg2 = nullptr;
 };
 
 #endif // WIDGET_H

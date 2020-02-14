@@ -4,11 +4,10 @@
 #include <QStyleOption>
 #include <QDebug>
 #include <QMouseEvent>
-#include "defines.h"
 
-#define HORN_PIX_NORMAL            PPRE("skin/General/interact_native/roleplay/other_horn.png")
-#define HORN_PIX_READING           PPRE("skin/General/interact_native/roleplay/other_horn_reading.png")
-#define HORN_PIX_READINGANI_DIR    PPRE("skin/General/interact_native/roleplay/senior/leftAni")
+#define HORN_PIX_NORMAL            (":/res/item/other_horn.png")
+#define HORN_PIX_READING           (":/res/item/other_horn_reading.png")
+#define HORN_PIX_READINGANI_DIR    (":/res/item/leftAni")
 
 static const int textMaxWidth = 480;
 

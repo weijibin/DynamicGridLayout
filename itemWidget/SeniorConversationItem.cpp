@@ -1,7 +1,6 @@
 ﻿#include "SeniorConversationItem.h"
 #include "ui_SeniorConversationItem.h"
 #include <QDebug>
-#include "defines.h"
 
 #define  OTHER_STYLESHEET ("QWidget{\
                             border: none; \
@@ -37,13 +36,13 @@
                              background-color:rgba(255,255,255,204);\
                          }")
 
-#define PRAISE_PIX          PPRE("skin/General/interact_native/roleplay/senior/senior_praise_nor.png")
-#define PRAISE_PIX_HOVER    PPRE("skin/General/interact_native/roleplay/senior/senior_praise_hover.png")
-#define PRAISE_PIX_PRESS    PPRE("skin/General/interact_native/roleplay/senior/senior_praise_pressed.png")
+#define PRAISE_PIX          (":/res/item/senior_praise_nor.png")
+#define PRAISE_PIX_HOVER    (":/res/item/senior_praise_hover.png")
+#define PRAISE_PIX_PRESS    (":/res/item/senior_praise_pressed.png")
 
-#define PRI_PRAISE_PIX          PPRE("skin/General/interact_native/roleplay/primary/primary_praise_nor.png")
-#define PRI_PRAISE_PIX_HOVER    PPRE("skin/General/interact_native/roleplay/primary/primary_praise_hover.png")
-#define PRI_PRAISE_PIX_PRESS    PPRE("skin/General/interact_native/roleplay/primary/primary_praise_pressed.png")
+#define PRI_PRAISE_PIX          (":/res/item/primary_praise_nor.png")
+#define PRI_PRAISE_PIX_HOVER    (":/res/item/primary_praise_hover.png")
+#define PRI_PRAISE_PIX_PRESS    (":/res/item/primary_praise_pressed.png")
 
 #define PRAISE_BTN_CSS ( "QPushButton{" \
     "border-image:url(%1);"\

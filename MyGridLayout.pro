@@ -28,12 +28,34 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         widget.cpp \
-    Item.cpp
+    Item.cpp \
+    itemWidget/HeadImg.cpp \
+    itemWidget/OtherSectionWidget.cpp \
+    itemWidget/SelfSectionWidget.cpp \
+    itemWidget/SeniorConversationItem.cpp \
+    itemWidget/StarsWidget.cpp \
+    itemWidget/animation/SequenceFrame.cpp \
+    dlg/dialog.cpp
 
 HEADERS += \
         widget.h \
-    Item.h
+    Item.h \
+    itemWidget/HeadImg.h \
+    itemWidget/OtherSectionWidget.h \
+    itemWidget/SelfSectionWidget.h \
+    itemWidget/SeniorConversationItem.h \
+    itemWidget/StarsWidget.h \
+    itemWidget/RolePlayDefine.h \
+    itemWidget/animation/SequenceFrame.h \
+    dlg/dialog.h
 
 FORMS += \
         widget.ui \
-    Item.ui
+    Item.ui \
+    itemWidget/OtherSectionWidget.ui \
+    itemWidget/SelfSectionWidget.ui \
+    itemWidget/SeniorConversationItem.ui \
+    dlg/dialog.ui
+
+RESOURCES += \
+    res.qrc
